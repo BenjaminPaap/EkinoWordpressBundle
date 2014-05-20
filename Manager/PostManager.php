@@ -22,4 +22,32 @@ use Ekino\WordpressBundle\Manager\BaseManager;
 class PostManager extends BaseManager
 {
 
+    /**
+     * @return mixed
+     */
+    public function findAllPublished()
+    {
+        return $this->repository->findAllPublished();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function findAllPublishedPosts()
+    {
+        return $this->repository->findAllPublishedPosts();
+    }
+
+    /**
+     * @param string $slug
+     *
+     * @return object
+     */
+    public function findOneBySlug($slug)
+    {
+        return $this->repository->findOneBy(array(
+            'name' => $slug
+        ));
+    }
+
 }
